@@ -1,0 +1,17 @@
+{
+  "name": "todoapp",
+  "version": "0.1.0",
+  "description": "todo app using REST and mongodb",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "todo",
+    "mongodb",
+    "mongoose",
+    "rest"
+  ],
+  "author": "Sigurd Schoeler",
+  "license": "ISC"
+}

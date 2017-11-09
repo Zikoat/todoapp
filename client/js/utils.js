@@ -27,10 +27,21 @@ var app = app || {};
 			return count === 1 ? word : word + "s";
 		},
 
-		storeData: function(namespace, data) {
-			console.log("storing data:", data);
-			return localStorage.setItem(namespace, JSON.stringify(data));
+		storeTodo: function(namespace, todo) {
+			console.log("todo before send",JSON.stringify(todo));
+			fetch("http://localhost:3000/tasks", {
+				method: "POST",
+				headers: {
+				  "Content-type": "application/json; charset=utf-8"
+				},
+				body: JSON.stringify(todo)
+			})
+				.then(response => response.json())
+				.then(data=>{
+					console.log("storing data:", data);
+				}).catch((err)=>console.err(err));
 
+			//return localStorage.setItem(namespace, JSON.stringify(todo));
 		},
 
 		getData: function(namespace) {

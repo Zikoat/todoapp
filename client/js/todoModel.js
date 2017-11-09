@@ -40,7 +40,10 @@ var app = app || {};
 	};
 
 	app.TodoModel.prototype.inform = function() {
-		Utils.storeData(this.key, this.todos);
+		this.todos.forEach((todo)=>{
+			Utils.storeTodo(this.key, todo)}
+			);
+		//Utils.storeTodo(this.key, this.todos);
 		this.onChanges.forEach(function(cb) {
 			cb();
 		});

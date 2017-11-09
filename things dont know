@@ -1,20 +1,13 @@
 things dont know: 
 res.json
 res.send
-(app)
-(.use)
-(app.route)
-(app.route.get)
-req
-res
-mongoose.model.
-	.find
-	new
-new Task save
-mongoose.model
-new schema
-app=express()
-app.listen
 x-www-form-urlencoded
 koa
-ajax?
+
+need to do: 
+
+create create
+create delete
+
+getting works nicely, updating/creating does not work
+need help with mongoose validators/ids

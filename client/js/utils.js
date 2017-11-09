@@ -34,17 +34,9 @@ var app = app || {};
 		},
 
 		getData: function(namespace) {
-			console.log("requested data");
 			
-			fetch("http://localhost:3000/tasks")
+			return fetch("http://localhost:3000/tasks")
 				.then(response => response.json())
-				.then(json => console.log("in mongo:",json));
-
-			var data = localStorage.getItem(namespace);
-			console.log("in localStorage", JSON.parse(data));
-
-			return data ? JSON.parse(data) : [];
-
 		},
 
 		extend: function() {

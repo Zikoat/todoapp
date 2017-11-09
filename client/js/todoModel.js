@@ -15,8 +15,24 @@ var app = app || {};
 	// separate out parts of your application.
 	app.TodoModel = function(key) {
 		this.key = key;
-		this.todos = Utils.getData(key);
+		this.todos = []; // this.todos is getting updated in the fetchData method
+		this.fetchData();
 		this.onChanges = [];
+	};
+
+	app.TodoModel.prototype.fetchData = function() {
+		// bad code
+		Utils.getData().then(data => {
+			this.todos = data.map(todo => {
+				todo.id = todo._id;
+				
+				delete todo._id;
+
+				return todo;
+			});
+			
+			this.inform();
+		});
 	};
 
 	app.TodoModel.prototype.subscribe = function(onChange) {

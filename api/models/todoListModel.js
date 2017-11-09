@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 let TaskSchema = new Schema({
-	name: {
+	title: {
 		type: String,
 		required: "Kindly enter the name of the task"
 	},

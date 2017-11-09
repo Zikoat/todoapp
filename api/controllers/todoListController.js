@@ -10,9 +10,9 @@ exports.list_all_tasks = function(req, res) {
 };
 
 exports.create_a_task = function(req, res) {
+	console.log("todo after send:", req.body);
 	let new_task = new Task(req.body);
-	console.log("saving task", new_task);
-
+	//console.log(new_task);
 	new_task.save(function(err, task) {
 		if (err) res.send(err);
 		res.json(task);
